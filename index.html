@@ -1,1 +1,121 @@
-Hello World
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel Sánchez Pagán</title>
+  <meta name="description" content="Mathematician, Master’s student in Artificial Intelligence and member of Transducens (University of Alicante).">
+  <meta name="author" content="Daniel Sánchez Pagán">
+  <meta property="og:title" content="Daniel Sánchez Pagán">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://dspagan.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/LM-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Pick the language before first paint: saved choice, then browser preferences, then English.
+    (function () {
+      var root = document.documentElement, lang = null;
+      try { lang = localStorage.getItem('lang'); } catch (e) {}
+      if (lang !== 'es' && lang !== 'en') {
+        lang = null;
+        var prefs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+        for (var i = 0; i < prefs.length && !lang; i++) {
+          var p = String(prefs[i] || '').toLowerCase().slice(0, 2);
+          if (p === 'es' || p === 'en') lang = p;
+        }
+      }
+      root.lang = lang || 'en';
+      if (root.lang !== 'en') {
+        root.classList.add('i18n-pending');
+        setTimeout(function () { root.classList.remove('i18n-pending'); }, 1500);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="page">
+    <div class="lang" role="group" aria-label="Language / Idioma">
+      <button type="button" data-lang="en" lang="en">English</button>
+      <span aria-hidden="true">|</span>
+      <button type="button" data-lang="es" lang="es">Español</button>
+    </div>
+
+    <header class="maketitle">
+      <h1>Daniel Sánchez Pagán</h1>
+      <p class="author">
+        Transducens<br>
+        <span data-i18n="ua">University of Alicante</span><br>
+        <a href="mailto:dansanzpag@gmail.com">dansanzpag@gmail.com</a>
+      </p>
+      <p class="date"><time datetime="2026-11" data-i18n="date">November 2026</time></p>
+    </header>
+
+    <section class="abstract" aria-labelledby="abstract">
+      <h2 id="abstract" data-i18n="h.abstract">Abstract</h2>
+      <p data-i18n="abstract">Mathematics graduate from the University of Alicante (UA), where I work as a Research Engineer in the Transducens research group, devoted to natural language processing and machine translation. I am currently pursuing a Master’s degree in Artificial Intelligence at the Universidad Internacional de La Rioja (UNIR).</p>
+      <p class="keywords">
+        <strong data-i18n="links">Links</strong>&ensp;
+        <a href="https://github.com/dspagan" target="_blank" rel="me noopener">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/dansanzpag" target="_blank" rel="me noopener">LinkedIn</a> ·
+        <a href="https://scholar.google.es/citations?user=iJFzYGwAAAAJ&amp;hl=es" target="_blank" rel="me noopener">Google Scholar</a>
+      </p>
+    </section>
+
+    <main>
+      <section aria-labelledby="about">
+        <h2 id="about" data-i18n="h.about">About</h2>
+        <p data-i18n="about.p1">I approach machine learning and deep learning from a mathematical point of view, with the aim of understanding in depth how and why they work.</p>
+        <p data-i18n="about.p2">My interests lie in differential geometry, optimization, numerical analysis and logic, and in the tools they provide for studying these models.</p>
+      </section>
+
+      <section aria-labelledby="experience">
+        <h2 id="experience" data-i18n="h.experience">Experience</h2>
+        <dl class="tabular">
+          <dt data-i18n="date.present">Present</dt>
+          <dd>
+            <strong data-i18n="exp.role">Research Engineer</strong>,
+            Transducens, DLSI, UA.
+          </dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="education">
+        <h2 id="education" data-i18n="h.education">Education</h2>
+        <dl class="tabular">
+          <dt>2026–<span data-i18n="date.present">Present</span></dt>
+          <dd>
+            <strong data-i18n="edu.master">Master’s degree in Artificial Intelligence</strong>,
+            UNIR.
+          </dd>
+          <dt>2021–2025</dt>
+          <dd>
+            <strong data-i18n="edu.degree">Bachelor’s degree in Mathematics</strong>,
+            UA.
+          </dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="publications">
+        <h2 id="publications" data-i18n="h.publications">Publications</h2>
+        <!--
+          To add publications, replace the paragraph below with:
+
+          <ol class="bibliography">
+            <li>
+              <strong>D. Sánchez Pagán</strong> and A. Coauthor.
+              <a href="https://..." target="_blank" rel="noopener">Title of the paper</a>.
+              In <em>Proceedings of Venue</em>, 2027.
+            </li>
+          </ol>
+        -->
+        <p class="noindent" data-i18n="pubs.empty">No publications yet.</p>
+      </section>
+    </main>
+
+    <footer class="folio" aria-hidden="true">1</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

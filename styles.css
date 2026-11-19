@@ -1,0 +1,128 @@
+/* Latin Modern (GUST Font License), the OpenType version of Computer Modern. */
+@font-face { font-family: "Latin Modern"; src: url("fonts/LM-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Latin Modern"; src: url("fonts/LM-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Latin Modern"; src: url("fonts/LM-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Latin Modern"; src: url("fonts/LM-bold-italic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --link: #1f3f8f;
+  color-scheme: light;
+}
+
+/* Hidden until the Spanish strings are applied (removed by script.js or a timeout). */
+.i18n-pending body { visibility: hidden; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Latin Modern", "CMU Serif", "Computer Modern", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+}
+
+.page {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 40px 16px 32px;
+  counter-reset: section;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 2px; }
+:focus-visible { outline: 1px solid var(--link); outline-offset: 2px; }
+
+/* ---------- Language switch ---------- */
+.lang {
+  display: flex; justify-content: flex-end; gap: 0.4em; align-items: baseline;
+  font-size: 0.8rem;
+}
+.lang button {
+  appearance: none; background: none; border: 0; padding: 0;
+  font: inherit; color: var(--link); cursor: pointer;
+}
+.lang button:hover { text-decoration: underline; text-underline-offset: 2px; }
+.lang button[aria-pressed="true"] { color: var(--text); cursor: default; text-decoration: none; }
+
+/* ---------- \maketitle ---------- */
+.maketitle { text-align: center; margin: 48px 0 40px; }
+.maketitle h1 {
+  margin: 0 0 22px;
+  font-size: 1.73em;   /* \LARGE */
+  font-weight: 400;
+  line-height: 1.2;
+}
+.author, .date { font-size: 1.2em; margin: 0; line-height: 1.35; } /* \large */
+.author { margin-bottom: 14px; }
+
+/* ---------- abstract ---------- */
+.abstract {
+  font-size: 0.9em;    /* \small */
+  margin: 0 3em 44px;
+  text-align: justify;
+  hyphens: auto;
+}
+.abstract h2 {
+  text-align: center; font-size: 1em; font-weight: 700;
+  margin: 0 0 8px;
+}
+.abstract p { margin: 0; text-indent: 1.5em; }
+.abstract p:first-of-type { text-indent: 0; }
+.abstract .keywords { margin-top: 10px; text-indent: 0; text-align: left; }
+
+/* ---------- \section ---------- */
+main section { counter-increment: section; margin-top: 34px; }
+main h2 {
+  font-size: 1.2em; font-weight: 700; line-height: 1.3;
+  margin: 0 0 12px;
+}
+main h2::before { content: counter(section); display: inline-block; min-width: 1.6em; }
+
+main p {
+  margin: 0;
+  text-align: justify;
+  hyphens: auto;
+  text-indent: 1.5em;
+}
+main h2 + p, .noindent { text-indent: 0; }
+
+/* ---------- tabular-style CV lists ---------- */
+.tabular {
+  display: grid;
+  grid-template-columns: 7em 1fr;
+  column-gap: 1.2em;
+  row-gap: 6px;
+  margin: 0;
+}
+.tabular dt { font-style: italic; }
+.tabular dd { margin: 0; }
+
+/* ---------- thebibliography ---------- */
+.bibliography { list-style: none; margin: 0; padding: 0; counter-reset: bib; }
+.bibliography li {
+  counter-increment: bib;
+  position: relative; padding-left: 2.4em;
+  text-align: justify; hyphens: auto;
+}
+.bibliography li + li { margin-top: 8px; }
+.bibliography li::before { content: "[" counter(bib) "]"; position: absolute; left: 0; }
+
+/* ---------- page number ---------- */
+.folio { text-align: center; margin-top: 64px; }
+
+@media (max-width: 560px) {
+  body { font-size: 18px; }
+  .page { padding-top: 20px; }
+  .maketitle { margin: 32px 0 32px; }
+  .abstract { margin: 0 0.5em 36px; }
+  .abstract, main p, .bibliography li { text-align: left; }
+  .tabular { grid-template-columns: 1fr; row-gap: 0; }
+  .tabular dt:empty { display: none; }
+  .tabular dd + dt, .tabular dt:empty + dd { margin-top: 10px; }
+}
