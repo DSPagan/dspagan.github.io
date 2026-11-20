@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#1a3d7c"/>
-  <text x="32" y="45" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-style="italic" fill="#ffffff">∂</text>
+  <rect width="64" height="64" rx="14" fill="#1f3f8f"/>
+  <!-- ∂ (U+2202) from Latin Modern Math, converted to outlines; light stroke keeps it legible at 16 px -->
+  <path fill="#ffffff" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round" d="M45.27 25.44C42.88 15.96 35.85 10 28.51 10C19.87 10 19.09 17.75 19.51 19.42C19.69 20.25 20.47 21.51 22.25 21.51C24.22 21.51 25.06 19.72 24.7 18.35C24.16 16.26 22.31 16.26 21.36 16.26C22.91 11.85 27.02 11.49 28.75 11.49C33.11 11.49 38.05 14.59 40.02 22.28C40.56 24.61 40.98 27.65 40.86 32.48C39.37 28.78 36.09 25.44 31.44 25.44C27.8 25.44 24.16 26.4 20.64 31.05C16.95 35.99 17.9 41.54 18.38 43.39C19.33 47.08 23.63 54 31.97 54C46.16 54 47.41 33.97 45.27 25.44ZM40.32 34.62C41.39 38.92 40.98 52.33 31.79 52.33C25.24 52.33 23.69 46.19 23.51 45.59C23.15 43.98 22.55 35.64 24.1 32.06C25.59 28.66 28.04 26.75 31.73 26.75C38.23 26.75 40.02 33.43 40.32 34.62Z"/>
 </svg>
